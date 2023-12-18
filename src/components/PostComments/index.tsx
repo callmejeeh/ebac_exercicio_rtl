@@ -3,7 +3,7 @@ import styles from './PostComments.module.css';
 
 import Comment from '../../models/Comment';
 
-const Post = () => {
+export const Post = () => {
     const [comments, setComments] = useState<Comment[]>([]);
     const [tempComment, setTempComment] = useState('');
 
@@ -26,13 +26,11 @@ const Post = () => {
                 ))}
             </ul>
             <form onSubmit={handleAddComment} className={styles['post-comments-form']}>
-                <textarea value={tempComment} onChange={e => setTempComment(e.target.value)} required className={styles['post-comments-form-textarea']} />
-                <button type="submit" className={styles['post-comments-form-button']}>
+                <textarea data-testid="post-comments-form-textarea" value={tempComment} onChange={e => setTempComment(e.target.value)} required className={styles['post-comments-form-textarea']} />
+                <button data-testid="post-comments-form-button" type="submit" className={styles['post-comments-form-button']}>
                     Comentar
                 </button>
             </form>
         </div>
     );
 }
-
-export default Post;
