@@ -1,7 +1,7 @@
-import { FormEvent, useState } from 'react';
-import styles from './PostComments.module.css';
+import { FormEvent, useState } from 'react'
+import styles from './PostComments.module.css'
 
-import Comment from '../../models/Comment';
+import Comment from '../../models/Comment'
 
 export const Post = () => {
     const [comments, setComments] = useState<Comment[]>([]);
@@ -34,3 +34,4 @@ export const Post = () => {
         </div>
     );
 }
+        export default Post;
