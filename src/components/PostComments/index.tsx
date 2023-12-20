@@ -3,7 +3,7 @@ import styles from './PostComments.module.css'
 
 import Comment from '../../models/Comment'
 
-export const Post = () => {
+const Post = () => {
     const [comments, setComments] = useState<Comment[]>([]);
     const [tempComment, setTempComment] = useState('');
 
