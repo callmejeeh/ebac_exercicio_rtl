@@ -12,13 +12,21 @@ describe('Teste para o componente PostComment', () => {
         
         const textarea = screen.getByTestId('post-comments-form-textarea');
         const button = screen.getByTestId('post-comments-form-button');
-        userEvent.type(textarea, 'Este é o primeiro comentário');
+        fireEvent.change(screen.getByTestId("post-comments-form-textarea"), {
+      target: {
+        value: "Este é o primeiro comentário",
+      };
         fireEvent.click(button);
+
+        
     
         const primeiroComentario = screen.getByText('Este é o primeiro comentário');
         expect(primeiroComentario).toBeInTheDocument();
     
-        userEvent.type(textarea, 'Este é o segundo comentário');
+        fireEvent.change(screen.getByTestId("post-comments-form-textarea"), {
+      target: {
+        value: "Este é o segundo comentário",
+      };
         fireEvent.click(button);
     
         const segundoComentario = screen.getByText('Este é o segundo comentário');
