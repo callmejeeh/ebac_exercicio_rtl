@@ -3,7 +3,7 @@ import Post from '.'
 import PostComment from '.'
 
 describe('Teste para o componente PostComment', () => {
-    it('Deve renderizar o componente corretamente', () => {
+    test('Deve renderizar o componente corretamente', () => {
         render(<PostComment/>);
         expect(screen.getByText('Comentar')).toBeInTheDocument();
     });
@@ -15,7 +15,8 @@ describe('Teste para o componente PostComment', () => {
         fireEvent.change(screen.getByTestId("post-comments-form-textarea"), {
       target: {
         value: "Este é o primeiro comentário",
-      };
+      }
+        });
         fireEvent.click(button);
 
         
@@ -26,7 +27,8 @@ describe('Teste para o componente PostComment', () => {
         fireEvent.change(screen.getByTestId("post-comments-form-textarea"), {
       target: {
         value: "Este é o segundo comentário",
-      };
+      }
+        });
         fireEvent.click(button);
     
         const segundoComentario = screen.getByText('Este é o segundo comentário');
